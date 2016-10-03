@@ -1,7 +1,25 @@
 <html>
 <body>
+{{#name}}
 Hello, {{name}}!
-<br><br>
+
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+{{/name}}
+
+{{^name}}
 <a href="/login">Login</a>
+{{/name}}
+
+<br><br>
+
+Past users:<br>
+<ul>
+{{#pastUsers}}
+<li>{{name}}</li>
+{{/pastUsers}}
+</ul>
+
 </body>
 </html>
